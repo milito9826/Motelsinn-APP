@@ -1,0 +1,42 @@
+<ion-content padding id="welcome">
+  <ion-grid>
+    <ion-row id="centrado">
+      <ion-col col-12>
+        <img src="./assets/imgs/logo.png" id="img" />
+      </ion-col>
+    </ion-row>
+
+    <form [formGroup]="formUsuario">
+      
+        <ion-list class="form">
+          <ion-item>
+            <ion-label floating>usuario</ion-label>
+            <ion-input type="text" formControlName="correoUsuario" name="correoUsuario" id="correoUsuario"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>contraseña</ion-label>
+            <ion-input type="password" formControlName="claveUsuario" name="claveUsuario" id="claveUsuario"></ion-input>
+          </ion-item>
+          <ion-item>
+            </ion-item>
+        </ion-list>
+        <div>
+          <button ion-button block color="dark" (click)="loginUsuario()">INGRESAR</button>
+        </div>
+        <div>
+          <button ion-button block color="dark" (click)="registrarUsuarios()">REGISTRAR</button>
+        </div>
+      
+    </form>
+
+
+
+    <div id="regsiterandforgot">
+      <div>
+        <button ion-button block color="danger">Olvide mi contraseña</button>
+      </div>
+    </div>
+
+  </ion-grid>
+</ion-content>

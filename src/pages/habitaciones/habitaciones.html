@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title class="titulo">Habitaciones {{objetoMotel.nombreMotel}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <ion-row>
+    <ion-col>
+      <ion-slides (ionSlideDidChange)="slideChanged()">
+        <ion-slide *ngFor="let image of arrayClavesImagenes">
+          <img src="http://res.cloudinary.com/motelsinn/image/upload/{{image.nombre}}">
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row> -->
+
+  <ion-card *ngFor="let habitaciones of totalHabitaciones; let idx = index">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="./assets/imgs/imagencirculo.png">
+      </ion-avatar>
+      <h2>Habitación {{habitaciones.numeroHabitacion}}</h2>
+      <p>Tipo de Habitación {{habitaciones.tipoHabitacion}}</p>
+    </ion-item>
+    <ion-col>
+      <ion-slides  (ionSlideDidChange)="slideChanged()">
+        <ion-slide *ngFor="let image of arrayClavesImagenes[idx]">
+          <img  src="http://res.cloudinary.com/motelsinn/image/upload/{{image.nombre}}">
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+    <ion-card-content>
+      <p>Excelente Habitacion con muchisimas comodidades</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="cash"></ion-icon>
+          <div>precio {{habitaciones.precioHabitacion}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="beer"></ion-icon>
+          <div>descuento {{habitaciones.descuentoHabitacion}}%</div>
+        </button>
+      </ion-col>
+      <!-- <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col> -->
+    </ion-row>
+
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title class="titulo">{{objetoMotel.nombreMotel}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="moteles">
+
+
+  <ion-row>
+    <ion-col>
+      <ion-slides (ionSlideDidChange)="slideChanged()">
+        <ion-slide *ngFor="let image of arrayClavesImagenes">
+          <img src="http://res.cloudinary.com/motelsinn/image/upload/{{image.nombre}}">
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+  <hr>
+  <ion-row>
+    <ion-col>
+      {{objetoMotel.descripcionMotel}}
+    </ion-col>
+  </ion-row>
+  <hr>
+  <div>
+    <button ion-button block color="danger" (click)="habitacionesDisponibles()">Reservar Habitaciones</button>
+  </div>
+  <br>
+  <ion-title class="titulo">servicios</ion-title>
+  <ion-list inset id="moteles">
+    <button ion-item *ngFor="let servicios of arrayServiciosMotel" id="moteles">
+      {{ servicios.nombre }}
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+
+</ion-header>
+<ion-content padding id="register">
+  <form [formGroup]="formRegister">
+      
+    <ion-list class="form">
+      <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input type="text" formControlName="nombreUsuario" name="correoUsuario" id="correoUsuario"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Apellido</ion-label>
+        <ion-input type="text" formControlName="apellidoUsuario" name="claveUsuario" id="claveUsuario"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Correo</ion-label>
+          <ion-input type="text" formControlName="correoUsuario" name="claveUsuario" id="claveUsuario"></ion-input>
+        </ion-item>
+
+          <ion-item>
+              <ion-label floating>contraseña</ion-label>
+              <ion-input type="password" formControlName="claveUsuario" name="claveUsuario" id="claveUsuario"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating> confirmar contraseña</ion-label>
+                <ion-input type="password"  formControlName="confirmarClave" name="claveUsuario" id="claveUsuario"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                </ion-item>
+    </ion-list>
+    <div>
+      <button ion-button block color="dark" (click)="onRegisterUser()">REGISTRAR</button>
+    </div>
+</form>
+
+</ion-content>
